@@ -1,0 +1,16 @@
+[
+  {
+    "title": "Productivity Video",
+    "category": "Video Editing",
+    "thumbnail": "images/project1.jpg",
+    "youtube": "https://youtu.be/Za6lAUH8t5E",
+    "description": "High retention self improvement edit."
+  },
+  {
+    "title": "Thumbnail Design",
+    "category": "Thumbnail",
+    "thumbnail": "images/project2.jpg",
+    "youtube": "https://youtu.be/gfYTEavSVNo",
+    "description": "CTR focused thumbnail."
+  }
+]
