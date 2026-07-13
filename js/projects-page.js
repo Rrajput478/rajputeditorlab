@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", async () => {
 
-    const container = document.getElementById("featuredProjects");
+    const container = document.getElementById("allProjects");
 
     if (!container) return;
 
@@ -14,15 +14,17 @@ document.addEventListener("DOMContentLoaded", async () => {
         data.projects.forEach(project => {
 
             const card = document.createElement("div");
+
             card.className = "project-card";
 
             card.innerHTML = `
+
                 <div class="project-preview">
 
                     <img
-                        class="thumbnail"
                         src="${project.thumbnail}"
-                        alt="${project.title}">
+                        alt="${project.title}"
+                        class="thumbnail">
 
                     <video
                         class="preview-video"
@@ -44,39 +46,55 @@ document.addEventListener("DOMContentLoaded", async () => {
 
                     <p>${project.description}</p>
 
-                    <a href="${project.youtube}" target="_blank" class="btn primary">
+                    <a href="${project.youtube}"
+                       target="_blank"
+                       class="btn primary">
+
                         Watch Project →
+
                     </a>
 
                 </div>
+
             `;
 
-            const video = card.querySelector(".preview-video");
             const image = card.querySelector(".thumbnail");
+            const video = card.querySelector(".preview-video");
 
-            video.style.opacity = "0";
             image.style.opacity = "1";
+            video.style.opacity = "0";
 
             card.addEventListener("mouseenter", () => {
+
                 image.style.opacity = "0";
+
                 video.style.opacity = "1";
+
                 video.play();
+
             });
 
             card.addEventListener("mouseleave", () => {
+
                 video.pause();
+
                 video.currentTime = 0;
+
                 video.style.opacity = "0";
+
                 image.style.opacity = "1";
+
             });
 
             container.appendChild(card);
 
         });
 
-    } catch (err) {
+    }
 
-        console.error("Error loading projects:", err);
+    catch (err) {
+
+        console.error("Unable to load projects:", err);
 
     }
 
