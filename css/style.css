@@ -169,7 +169,8 @@ body::after{
     letter-spacing:.5px;
 
     background:linear-gradient(90deg,#ff4b6b,#5fa8ff);
-
+    
+    background-clip: text;
     -webkit-background-clip:text;
 
     -webkit-text-fill-color:transparent;
@@ -287,7 +288,8 @@ body::after{
 .hero-content h1 span{
 
     background:linear-gradient(90deg,#ff4669,#5ba8ff);
-
+    
+    background-clip: text;
     -webkit-background-clip:text;
 
     -webkit-text-fill-color:transparent;
@@ -477,7 +479,7 @@ body::after{
     font-size:2.8rem;
 
     background:linear-gradient(90deg,#ff4d6d,#5ba8ff);
-
+    background-clip: text;
     -webkit-background-clip:text;
 
     -webkit-text-fill-color:transparent;
@@ -709,7 +711,7 @@ body::after{
 .page-hero span{
 
     background:linear-gradient(90deg,#ff4d7d,#5ba8ff);
-
+    background-clip: text;
     -webkit-background-clip:text;
 
     -webkit-text-fill-color:transparent;
@@ -818,6 +820,7 @@ body::after{
 
     background:linear-gradient(90deg,#ff4d7d,#5ba8ff);
 
+    background-clip: text;
     -webkit-background-clip:text;
 
     -webkit-text-fill-color:transparent;
