@@ -32,10 +32,10 @@
       "title": "Sleep Science",
       "category": "Educational",
       "client": "YouTube Creator",
-      "thumbnail": "images/projects/sleep.png",
+      "thumbnail": "images/projects/earphone.png",
       "preview": "videos/earphone.mp4",
       "youtube": "https://youtu.be/Za6lAUH8t5E",
-      "description": "Educational YouTube video explaining sleep science using cinematic editing and engaging motion graphics.",
+      "description": "Educational YouTube video explaining music dark side using cinematic editing and engaging motion graphics.",
       "tools": [
         "Premiere Pro",
         "After Effects"
@@ -50,6 +50,34 @@
         "Health",
         "Motion Graphics"
       ]
+    }, 
+
+    {
+      "id": 3,
+      "featured": false,
+      "title": "Sleep Science",
+      "category": "Habitual",
+      "client": "YouTube Creator",
+      "thumbnail": "images/projects/sleep.png",
+      "preview": "videos/sleep.mp4",
+      "youtube": "https://youtu.be/LUl0W9-FqnE",
+      "description": "Educational YouTube video explaining sleep science using cinematic editing and engaging motion graphics.",
+      "tools": [
+        "Premiere Pro",
+        "After Effects"
+      ],
+      "results": {
+        "views": "250K+",
+        "retention": "71%",
+        "ctr": "10%"
+      },
+      "tags": [
+        "Education",
+        "Health",
+        "Motion Graphics",
+        "Sleep Science"
+      ]
     }
   ]
 }
+
