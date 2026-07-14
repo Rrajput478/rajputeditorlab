@@ -8,7 +8,7 @@
       "client": "Personal Brand",
       "thumbnail": "images/projects/confidence.webp",
       "preview": "videos/confidence-preview.mp4",
-      "youtube": "<a href=\"https://www.youtube.com/watch?v=Za6lAUH8t5E\" target=\"_blank\" rel=\"noopener noreferrer\">Watch on YouTube</a>",
+      "youtube": "https://youtu.be/gfYTEavSVNo",
       "description": "A high-retention YouTube edit focused on storytelling, motion graphics, sound design, and audience retention.",
       "tools": [
         "Premiere Pro",
@@ -34,7 +34,7 @@
       "client": "YouTube Creator",
       "thumbnail": "images/projects/sleep.webp",
       "preview": "videos/sleep-preview.mp4",
-      "youtube": "https://youtu.be/yyyyyyyy",
+      "youtube": "https://youtu.be/Za6lAUH8t5E",
       "description": "Educational YouTube video explaining sleep science using cinematic editing and engaging motion graphics.",
       "tools": [
         "Premiere Pro",
