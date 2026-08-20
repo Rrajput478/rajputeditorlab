@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Share your experience with Rajput Editor Lab."
+    >
+
+    <title>Share Your Experience | Rajput Editor Lab</title>
+
+    <style>
+
+        /* =========================================
+           RESET
+        ========================================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            min-height: 100vh;
+
+            font-family:
+                Inter,
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            color: #fff;
+
+            background:
+                radial-gradient(
+                    circle at 10% 20%,
+                    rgba(255, 0, 60, 0.12),
+                    transparent 35%
+                ),
+                radial-gradient(
+                    circle at 90% 30%,
+                    rgba(0, 80, 255, 0.13),
+                    transparent 35%
+                ),
+                #050505;
+
+            overflow-x: hidden;
+        }
+
+
+        /* =========================================
+           BACKGROUND GLOWS
+        ========================================= */
+
+        body::before {
+            content: "";
+
+            position: fixed;
+
+            width: 400px;
+            height: 400px;
+
+            left: -200px;
+            top: 25%;
+
+            background:
+                rgba(255, 0, 55, 0.12);
+
+            filter: blur(120px);
+
+            border-radius: 50%;
+
+            pointer-events: none;
+
+            z-index: -1;
+        }
+
+
+        body::after {
+            content: "";
+
+            position: fixed;
+
+            width: 400px;
+            height: 400px;
+
+            right: -200px;
+            bottom: 10%;
+
+            background:
+                rgba(0, 80, 255, 0.12);
+
+            filter: blur(120px);
+
+            border-radius: 50%;
+
+            pointer-events: none;
+
+            z-index: -1;
+        }
+
+
+        /* =========================================
+           NAVBAR
+        ========================================= */
+
+        .navbar {
+            width: 100%;
+
+            padding: 22px 6%;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            border-bottom:
+                1px solid
+                rgba(255,255,255,0.08);
+
+            background:
+                rgba(5,5,5,0.55);
+
+            backdrop-filter: blur(20px);
+
+            position: sticky;
+
+            top: 0;
+
+            z-index: 100;
+        }
+
+
+        .logo {
+            color: #fff;
+
+            text-decoration: none;
+
+            font-size: 18px;
+
+            font-weight: 800;
+
+            letter-spacing: -0.5px;
+        }
+
+
+        .logo span {
+            background:
+                linear-gradient(
+                    90deg,
+                    #ff1744,
+                    #1976ff
+                );
+
+            -webkit-background-clip: text;
+
+            background-clip: text;
+
+            color: transparent;
+        }
+
+
+        .back-link {
+            color: #aaa;
+
+            text-decoration: none;
+
+            font-size: 13px;
+
+            padding: 9px 15px;
+
+            border:
+                1px solid
+                rgba(255,255,255,0.12);
+
+            border-radius: 10px;
+
+            background:
+                rgba(255,255,255,0.04);
+
+            transition: 0.3s ease;
+        }
+
+
+        .back-link:hover {
+            color: #fff;
+
+            border-color:
+                rgba(255,30,70,0.4);
+
+            background:
+                rgba(255,30,70,0.08);
+
+            transform: translateY(-2px);
+        }
+
+
+        /* =========================================
+           MAIN
+        ========================================= */
+
+        .main {
+            width: 100%;
+
+            padding:
+                90px 20px 110px;
+        }
+
+
+        /* =========================================
+           HERO
+        ========================================= */
+
+        .hero {
+            max-width: 760px;
+
+            margin:
+                0 auto 55px;
+
+            text-align: center;
+        }
+
+
+        .tag {
+            display: inline-block;
+
+            padding: 8px 16px;
+
+            border:
+                1px solid
+                rgba(255,255,255,0.12);
+
+            border-radius: 30px;
+
+            background:
+                rgba(255,255,255,0.04);
+
+            backdrop-filter: blur(15px);
+
+            color: #999;
+
+            font-size: 10px;
+
+            letter-spacing: 3px;
+
+            font-weight: 600;
+        }
+
+
+        .hero h1 {
+            margin-top: 22px;
+
+            font-size:
+                clamp(42px, 7vw, 78px);
+
+            line-height: 0.98;
+
+            letter-spacing: -3px;
+
+            font-weight: 850;
+        }
+
+
+        .hero h1 span {
+            background:
+                linear-gradient(
+                    90deg,
+                    #ff1744 0%,
+                    #ff315f 45%,
+                    #1769ff 100%
+                );
+
+            -webkit-background-clip: text;
+
+            background-clip: text;
+
+            color: transparent;
+        }
+
+
+        .hero p {
+            max-width: 600px;
+
+            margin:
+                22px auto 0;
+
+            color: #888;
+
+            font-size: 15px;
+
+            line-height: 1.8;
+        }
+
+
+        /* =========================================
+           FORM CONTAINER
+        ========================================= */
+
+        .form-wrapper {
+            position: relative;
+
+            width: 100%;
+
+            max-width: 900px;
+
+            margin: auto;
+
+            padding: 12px;
+
+            border-radius: 28px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(255,30,70,0.22),
+                    rgba(20,80,255,0.20)
+                );
+
+            box-shadow:
+                0 30px 100px
+                rgba(0,0,0,0.45);
+        }
+
+
+        .form-inner {
+            width: 100%;
+
+            border-radius: 20px;
+
+            overflow: hidden;
+
+            border:
+                1px solid
+                rgba(255,255,255,0.10);
+
+            background:
+                rgba(10,10,10,0.85);
+
+            backdrop-filter: blur(20px);
+
+            min-height: 700px;
+        }
+
+
+        /* =========================================
+           GOOGLE FORM
+        ========================================= */
+
+        .google-form {
+            display: block;
+
+            width: 100%;
+
+            min-height: 850px;
+
+            border: none;
+
+            background: transparent;
+        }
+
+
+        /* =========================================
+           PRIVACY NOTE
+        ========================================= */
+
+        .privacy-note {
+            max-width: 700px;
+
+            margin:
+                25px auto 0;
+
+            text-align: center;
+
+            color: #666;
+
+            font-size: 11px;
+
+            line-height: 1.7;
+        }
+
+
+        /* =========================================
+           BOTTOM CTA
+        ========================================= */
+
+        .bottom-section {
+            text-align: center;
+
+            margin-top: 65px;
+        }
+
+
+        .bottom-section p {
+            color: #777;
+
+            font-size: 13px;
+
+            margin-bottom: 16px;
+        }
+
+
+        .portfolio-btn {
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            padding:
+                13px 22px;
+
+            color: #fff;
+
+            text-decoration: none;
+
+            font-size: 13px;
+
+            font-weight: 600;
+
+            border:
+                1px solid
+                rgba(255,255,255,0.12);
+
+            border-radius: 12px;
+
+            background:
+                rgba(255,255,255,0.05);
+
+            backdrop-filter: blur(15px);
+
+            transition: 0.3s ease;
+        }
+
+
+        .portfolio-btn:hover {
+            transform: translateY(-3px);
+
+            border-color:
+                rgba(30,90,255,0.45);
+
+            background:
+                rgba(30,90,255,0.10);
+        }
+
+
+        /* =========================================
+           FOOTER
+        ========================================= */
+
+        footer {
+            padding:
+                25px 20px;
+
+            text-align: center;
+
+            border-top:
+                1px solid
+                rgba(255,255,255,0.06);
+
+            color: #555;
+
+            font-size: 11px;
+        }
+
+
+        footer strong {
+            color: #777;
+        }
+
+
+        /* =========================================
+           RESPONSIVE
+        ========================================= */
+
+        @media (max-width: 650px) {
+
+            .navbar {
+                padding:
+                    18px 20px;
+            }
+
+
+            .logo {
+                font-size: 16px;
+            }
+
+
+            .back-link {
+                font-size: 11px;
+
+                padding:
+                    8px 11px;
+            }
+
+
+            .main {
+                padding:
+                    65px 14px 80px;
+            }
+
+
+            .hero h1 {
+                font-size: 43px;
+
+                letter-spacing: -2px;
+            }
+
+
+            .hero p {
+                font-size: 13px;
+            }
+
+
+            .form-wrapper {
+                padding: 6px;
+
+                border-radius: 20px;
+            }
+
+
+            .form-inner {
+                border-radius: 16px;
+            }
+
+
+            .google-form {
+                min-height: 900px;
+            }
+
+        }
+
+
+        /* =========================================
+           REDUCED MOTION
+        ========================================= */
+
+        @media (
+            prefers-reduced-motion: reduce
+        ) {
+
+            html {
+                scroll-behavior: auto;
+            }
+
+            * {
+                transition: none !important;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================================
+         NAVBAR
+    ========================================== -->
+
+    <nav class="navbar">
+
+        <a
+            href="index.html"
+            class="logo"
+        >
+            Rajput <span>Editor Lab</span>
+        </a>
+
+
+        <a
+            href="index.html#testimonials"
+            class="back-link"
+        >
+            ← Back to Testimonials
+        </a>
+
+    </nav>
+
+
+
+    <!-- =========================================
+         MAIN
+    ========================================== -->
+
+    <main class="main">
+
+
+        <!-- HERO -->
+
+        <section class="hero">
+
+            <span class="tag">
+                CLIENT FEEDBACK
+            </span>
+
+
+            <h1>
+                Share Your
+                <span>Experience.</span>
+            </h1>
+
+
+            <p>
+                Your feedback helps Rajput Editor Lab
+                improve, grow, and create better
+                experiences for future creators.
+            </p>
+
+        </section>
+
+
+
+        <!-- =====================================
+             GOOGLE FORM
+        ====================================== -->
+
+        <section class="form-wrapper">
+
+            <div class="form-inner">
+
+                <!--
+                    IMPORTANT:
+
+                    Replace the URL below with
+                    YOUR Google Form EMBED URL.
+
+                    Example:
+
+                    https://docs.google.com/forms/d/e/FORM_ID/viewform?embedded=true
+                -->
+
+                <iframe
+                    class="google-form"
+                    src="https://forms.gle/UWq1u5FtD19iumfX7
+                    title="Rajput Editor Lab Testimonial Form"
+                    loading="lazy"
+                    allowfullscreen>
+                </iframe>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- PRIVACY -->
+
+        <p class="privacy-note">
+            Please only share information that you are
+            comfortable making part of your testimonial.
+            Your feedback may be featured on the
+            Rajput Editor Lab website with your permission.
+        </p>
+
+
+
+        <!-- BOTTOM CTA -->
+
+        <section class="bottom-section">
+
+            <p>
+                Want to explore more of my work?
+            </p>
+
+
+            <a
+                href="index.html#projects"
+                class="portfolio-btn"
+            >
+                View Portfolio
+                <span>→</span>
+            </a>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =========================================
+         FOOTER
+    ========================================== -->
+
+    <footer>
+
+        © 2026
+        <strong>Rajput Editor Lab</strong>.
+        All rights reserved.
+
+    </footer>
+
+
+</body>
+
+</html>
+
