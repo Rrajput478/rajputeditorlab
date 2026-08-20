@@ -16,6 +16,10 @@
     <link rel="icon" type="image/png" sizes="32x32" href="images/rajputeditorlab.png">
     <link rel="icon" type="image/png" sizes="192x192" href="images/rajputeditorlab.png">
     <link rel="apple-touch-icon" href="images/rajputeditorlab.png">
+
+    <link rel="manifest" href="./manifest.json">
+    <meta name="theme-color" content="#050505"> 
+
 </head>
 
 <body>
@@ -591,6 +595,23 @@
 <script src="js/script.js"></script>
 <script src="js/projects.js"></script>
 <script src="js/testimonials.js"></script>
+
+<script>
+if ("serviceWorker" in navigator) {
+    window.addEventListener("load", () => {
+        navigator.serviceWorker.register("./service-worker.js")
+            .then(() => {
+                console.log("Rajput Editor Lab PWA registered.");
+            })
+            .catch((error) => {
+                console.error(
+                    "PWA registration failed:",
+                    error
+                );
+            });
+    });
+}
+</script>
 
 </body>
 
