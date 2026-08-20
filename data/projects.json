@@ -1,6 +1,32 @@
 {
   "projects": [
     {
+      "id": 4,
+      "featured": false,
+      "title": "Roblox Game Edit",
+      "category": "Gaming",
+      "client": "YouTube Creator",
+      "thumbnail": "images/projects/robloxedit.png",
+      "preview": "videos/robloxeditz.mp4",
+      "youtube": "https://drive.google.com/file/d/1skaFiR-RIAMrfkqoqQ_8L3XF_cIr2HjA/view?usp=sharing",
+      "description": "Educational YouTube video explaining Roblox game editing using cinematic editing and engaging motion graphics.",
+      "tools": [
+        "Premiere Pro",
+        "After Effects"
+      ],
+      "results": {
+        "views": "250K+",
+        "retention": "71%",
+        "ctr": "10%"
+      },
+      "tags": [
+        "Roblox editing",
+        "Gaming",
+        "Motion Graphics",
+        "Roblox Game"
+      ]
+    },
+    {
       "id": 1,
       "featured": true,
       "title": "Ultimate Confidence",
@@ -76,33 +102,6 @@
         "Health",
         "Motion Graphics",
         "Sleep Science"
-      ]
-    },
-
-    {
-      "id": 4,
-      "featured": false,
-      "title": "Roblox Game Edit",
-      "category": "Gaming",
-      "client": "YouTube Creator",
-      "thumbnail": "images/projects/robloxedit.png",
-      "preview": "videos/robloxeditz.mp4",
-      "youtube": "https://drive.google.com/file/d/1skaFiR-RIAMrfkqoqQ_8L3XF_cIr2HjA/view?usp=sharing",
-      "description": "Educational YouTube video explaining Roblox game editing using cinematic editing and engaging motion graphics.",
-      "tools": [
-        "Premiere Pro",
-        "After Effects"
-      ],
-      "results": {
-        "views": "250K+",
-        "retention": "71%",
-        "ctr": "10%"
-      },
-      "tags": [
-        "Roblox editing",
-        "Gaming",
-        "Motion Graphics",
-        "Roblox Game"
       ]
     }
   ]
